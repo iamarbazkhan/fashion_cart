@@ -6,18 +6,17 @@ const UserLoginContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   padding: 15px;
-  background: rgba(255, 255, 255, .2);
-  border:2px solid rgba(255, 255, 255, .2);
-  border-radius:8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   width: 300px;
-  height:400px;
-  margin-left:600px;
-  margin-top:140px;
+  height: 400px;
+  margin-left: 600px;
+  margin-top: 140px;
 `;
 const UserEmail = styled.input`
   border: none;
@@ -35,17 +34,17 @@ const UserPassword = styled.input`
   margin: 4px;
 `;
 const LoginButton = styled.button`
-width:80px;
-height:40px;
-border-radius:4px;
-border:2px solid rgba(255, 255, 255, .2);
-color:grey;
-bsckgroud-color:rgba(255, 255, 255, .2);
-font-size:16px;
-font-weight:12px;
-&:hover{
-  cursor:pointer;
-}
+  width: 80px;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: grey;
+  bsckgroud-color: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  font-weight: 12px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const LoginHeading = styled.div`
   font-size: 16px;
@@ -56,8 +55,6 @@ const UserEmailDiv = styled.div`
   margin: 10px;
   border-radius: 4px;
   background-color: #ffffff;
-
-  
 `;
 const UserPasswordDiv = styled(UserEmailDiv)``;
 const UserIcon = styled.div`
@@ -66,7 +63,8 @@ const UserIcon = styled.div`
 const PasswordIcon = styled.div`
   margin-top: 6px;
 `;
-function Login() {
+function Login(props) {
+  const { setEmail, setPassword, onLogin } = props;
   return (
     <UserLoginContainer>
       <LoginHeading>Login Form</LoginHeading>
@@ -74,16 +72,24 @@ function Login() {
         <UserIcon>
           <PersonIcon />
         </UserIcon>
-        <UserEmail type="email" placeholder="Email or Username" />
+        <UserEmail
+         onChange={(event)=>setEmail(event.target.value)}
+          type="email"
+          placeholder="Email or Username"
+        />
       </UserEmailDiv>
       <UserPasswordDiv>
         <PasswordIcon>
           <LockIcon />
         </PasswordIcon>
-        <UserPassword type="password" placeholder="Password" />
+        <UserPassword
+          onChange={(event) => setPassword(event.target.value)}
+          type="password"
+          placeholder="Password"
+        />
       </UserPasswordDiv>
 
-      <LoginButton>Login</LoginButton>
+      <LoginButton onClick={onLogin}>Login</LoginButton>
     </UserLoginContainer>
   );
 }

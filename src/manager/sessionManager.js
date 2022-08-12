@@ -1,17 +1,17 @@
-import Cookies from "universal-cookie";
+// import Cookies from "universal-cookie";
 
-const cookies = Cookies();
+// const cookies = Cookies();
 
-const sessionManager = {
-  setDataInCookies,
-  getDataFromCookies,
-};
-export default sessionManager;
+// const sessionManager = {
+//   setDataInCookies,
+//   getDataFromCookies,
+// };
+// export default sessionManager;
 
-const setDataInCookies = (key, data) => {
-  cookies.set(key, data, { path: "/" });
-};
+// const setDataInCookies = (key, data) => {
+//   cookies.set(key, data, { path: "/" });
+// };
 
-const getDataFromCookies = (key) => {
-  return cookies.get(key);
-};
+// const getDataFromCookies = (key) => {
+//   return cookies.get(key);
+// };

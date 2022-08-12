@@ -7,7 +7,7 @@ import Utility from "../../utility";
 import AddProductComponent from "../addProduct";
 import Products from "../products";
 import AboutUs from "../about/About";
-import Login from "../login/Login";
+import Login from "../login";
 import SignUp from "../SignUp";
 import LoginBackgroundImage from "../../static/images/login_background.png";
 const DashbordContainer = styled.div`
